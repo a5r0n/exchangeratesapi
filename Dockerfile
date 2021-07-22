@@ -1,4 +1,4 @@
-FROM python:3.9-slim as base
+FROM python:3.6-slim as base
 
 RUN \
     apt-get -y update && apt-get install && \
