@@ -11,9 +11,10 @@ WORKDIR /app
 COPY Pipfile.lock Pipfile ./
 
 ENV PIP_WHEEL_DIR=/wheelhouse
+ENV BUILD_DEPS='g++ gcc git make build-essential checkinstall'
 
 RUN \
-    apt-get install -y gcc && \
+    apt-get install -y $BUILD_DEPS --no-install-recommends && \
     micropipenv requirements --no-dev > requirements.txt && \
     pip install -r requirements.txt && \
     pip wheel -r requirements.txt
