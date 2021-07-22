@@ -11,7 +11,7 @@ WORKDIR /app
 COPY Pipfile.lock Pipfile ./
 
 ENV PIP_WHEEL_DIR=/wheelhouse
-ENV BUILD_DEPS='g++ gcc git make build-essential checkinstall'
+ENV BUILD_DEPS='g++ gcc git make build-essential'
 
 RUN \
     apt-get install -y $BUILD_DEPS --no-install-recommends && \
